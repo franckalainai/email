@@ -5,20 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Réinitialiser Mot de Passe') }}</div>
+                <div class="card-header">Envoyer l'Email d'Activation</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="{{route('auth.activate.resend')}}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Adresse Email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Addresse Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -31,10 +25,12 @@
                             </div>
                         </div>
 
+
+
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Envoyer le Lien du Mot de Passe') }}
+                                    Envoyer
                                 </button>
                             </div>
                         </div>

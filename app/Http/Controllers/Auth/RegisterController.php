@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = 'RouteServiceProvider::HOME';
 
     /**
      * Create a new controller instance.
@@ -83,6 +83,6 @@ class RegisterController extends Controller
 
         $this->guard()->logout();
         return redirect()->route('login')
-        ->withSuccess('Registered, please check your email account to activate your account');
+        ->withSuccess('Enregistrement réussi, veuillez consulter votre messagerie pour activer votre compte');
     }
 }

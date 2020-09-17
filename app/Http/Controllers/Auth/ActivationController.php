@@ -17,6 +17,6 @@ class ActivationController extends Controller
         ]);
 
         Auth::loginUsingId($user->id);
-        return redirect()->route('home')->withSuccess('Activated you are now signed in');
+        return redirect()->route('home')->withSuccess('Compte activé, vous êtes authentifié');
     }
 }

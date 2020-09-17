@@ -1,15 +1,13 @@
 @component('mail::message')
-# Activate your account
-
-Thanks for signin up, please activate your account.
+# Veuillez cliquer sur le bouton "Activer" pour accéder à votre compte
 
 @component('mail::button', ['url' => route('auth.activate', [
     'token' => $user->activation_token,
     'email' =>$user->email
 ])])
-Activate
+Activer
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+Merci,<br>
+
 @endcomponent

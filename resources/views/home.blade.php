@@ -15,6 +15,16 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <ul>
+                        <li>Franck</li>
+                    </ul>
+                    @if(auth::user()->role_id < 1)
+                        <ul>
+                            <li>Ange</li>
+                        </ul>
+                    @endif
+
                 </div>
             </div>
         </div>
